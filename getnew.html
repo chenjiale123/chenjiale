@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>0910后台管理系统</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/layui.css">
+	<link rel="stylesheet" href="css/gly.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/cookie.js"></script>
+</head>
+<body>
+		<div class="view">
+		   <div class="hid-nav" id="nav">
+		</div>
+		
+			<div class="main-body">
+				<div class="main-nav container-fluid" id="main-nav">
+				</div>
+			</div>
+		</div>
+		<table>
+				<tbody id="content">
+					<tr class="etc">
+						<td class="esp">id</td>
+						<td>标题</td>
+						<td>分类</td>
+				
+						<td>简介</td>
+						<td>时间</td>
+					
+						<td>内容</td>
+						<td > 操作</td>
+					</tr>
+				</tbody>
+			</table>
+			<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+   
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="js/nav.js"></script>
+	
+
+	<script>
+
+	function del($id) {
+			var id=$id;
+			var i=id.parentNode.parentNode.rowIndex;
+			document.getElementById('content').deleteRow(i);
+			}
+		var jsonData;
+
+		if (typeof data === 'string') {
+			jsonData = $.parseJSON(data);
+		} else if (typeof data === 'object') {
+			jsonData = data
+        }
+        
+
+	var xhr = new XMLHttpRequest()
+    xhr.open('GET', 'getNews.php')
+    xhr.send()
+    xhr.onreadystatechange = function () {
+      if (this.readyState !== 4) return
+	  var jsonData = JSON.parse(this.responseText)
+	  
+      content=document.getElementById('content')
+	 
+    
+ 
+      for (var i = 0; i < jsonData.message.length; i++) {
+    var tr = document.createElement('tr')
+    content.appendChild(tr)
+
+	   
+		    //  var sex = jsonData.message[i].sex=='1'?"男":"女";
+		
+          
+        tr.innerHTML = '<td>' + jsonData.message[i].id + '</td>'+'<td>'+ jsonData.message[i].title +'</td>'+'<td>'+ jsonData.message[i].classify +'</td>'
+  +'<td>'+ jsonData.message[i].info+'</td>'+'<td>'+ jsonData.message[i].artTime +'</td>'
+        +'<td class="qu">'+ jsonData.message[i].article +'</td>' + '<button class="red" onclick="del(this)" >' +'<span>'+'发布'+'</span>' +'</button>'+'</td>'
+      }
+
+    }
+
+    
+
+
+
+	</script>
+
+	
+	
+
+		
+</body>
+</html>

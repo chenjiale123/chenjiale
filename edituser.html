@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>0910后台管理系统</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/layui.css">
+	<script src="js/jquery-1.12.4.js"></script>
+  <script src="js/cookie.js"></script>
+</head>
+<body>
+
+		<div class="view">
+			<div class="hid-nav" id="nav">
+			</div>
+			<div class="main-body">
+				<div class="main-nav container-fluid" id="main-nav"> 
+				</div>			
+				<div class="main-content container-fluid pr-lg-0">
+					<div class="row">
+<div class="col-md-6 offset-md-1">
+            <div class="page-header">
+                <h2>管理员修改</h2>
+            </div>
+
+            <form id="defaultForm" method="post" action="edituser.php" class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">用户头像</label>
+                    <div class="col-lg-5">
+                       <input type="file" id="upload_file" id="upimage" accept="image/*">
+                       <input type="hidden"  id="base64_output" name="UserAvatar" value="" />
+                       <img src="" id="imgreader" width="150" height="150" alt="" style="display: none">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">用户名</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" name="username" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email address</label>
+                    <div class="col-lg-5">
+                        <input type="text" disabled class="form-control" name="email" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">初始密码</label>
+                    <div class="col-lg-5">
+                        <input type="password" class="form-control" name="password" />
+                    </div>
+                    <div class="col-lg-5">密码不修改请留空</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">qq</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" name="qq" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">说明</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" name="info" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">性别</label>
+                    <div class="col-lg-10">
+                        <input type="radio" style="display: inline;"  name="sex" value="1" /> 男
+                        <input type="radio" style="display: inline;"  name="sex" value="0" /> 女
+                    </div>
+                </div>
+             <div class="form-group">
+                    <label class="col-lg-3 control-label">身份</label>
+                    <div class="col-lg-10">
+                        <input type="radio" style="display: inline;"  name="level" value="1" /> 
+                        管理员
+                        <input type="radio" style="display: inline;"  name="level" value="0" /> 普通会员
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                       <input type="hidden" id="userid" name="userid">
+                       <input type="hidden" id="send" name="send" value="1">
+                        <button type="submit" class="btn btn-primary" id="success">修改管理员</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+            </div>
+				</div>
+			</div>
+		</div>
+
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  	<script src="js/nav.js"></script>
+   
+
+<script>
+  
+function stringToobject(data){
+    var jsonData
+	if (typeof data === 'string') {
+		jsonData = $.parseJSON(data);
+	} else if (typeof data === 'object') {
+		jsonData = data
+	}
+	return jsonData
+}
+
+function GetHttpString(name) {　　
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");　　
+	var r = window.location.search.substr(1).match(reg);　　
+	if (r != null) return unescape(r[2]);
+	return null;
+}
+
+    $.ajax({
+        url:'getusers.php',
+       data: {userid:GetHttpString('userid')},
+       success:
+       function(data) {
+      var jsonData = stringToobject(data);
+      if(jsonData.valid){
+        var users = jsonData.users[0];
+        console.log(users)
+        $('#base64_output').val(users.userface);
+         $('#imgreader').attr('src',users.userface)
+         $('#imgreader').show()
+         $('[name="username"]').val(users.username)
+         $('[name="email"]').val(users.email)
+         $('[name="password"]').val(users.password)
+         $('[name="qq"]').val(users.qq)
+         $('[name="info"]').val(users.info)
+         $('#userid').val(users.id)
+
+         if(users.sex==1){
+             $('input[value=1]').attr('checked','checked')
+         }else if(users.sex==0){
+             $('input[value=0]').attr('checked','checked')
+         }
+
+         if(users.level==1){
+             $('input[value=1]').attr('checked','checked')
+         }else if(users.level==0){
+             $('input[value=0]').attr('checked','checked')
+         }
+
+       }else{
+          alert(jsonData.message)
+       }
+    }
+    })
+
+  $("#upload_file").on('change',function(){
+      var file = $('#upload_file')[0].files[0];
+      reader = new FileReader();  
+      reader.onload = function(){
+          $('#base64_output').val(reader.result);
+           $('#imgreader').attr('src',reader.result)
+           $('#imgreader').show()
+      }
+      reader.readAsDataURL(file); 
+  })
+
+
+$('#defaultForm').on('submit',function(e){
+    e.preventDefault();
+   $.post($('#defaultForm').attr('action'),$('#defaultForm').serialize(), function(data, textStatus, xhr) {
+      var jsonData = stringToobject(data)
+      $('#success').html(jsonData.message)
+   });
+
+
+})
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.col-md-6 {
+    margin: 0 auto;
+}
+.page-header h2{
+    text-align: center;
+}
+.col-lg-5{
+    margin: 0 auto;
+}
+.avatarbox{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px dotted #fff;
+    background: rgb(255, 255, 255);
+}
+.avatar{
+    width: 100%;
+    height: 100%;
+}
+.form-group{
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+.control-label{
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+.col-lg-5{
+    width: 80%;
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    
+}
+.col-lg-10{
+    position: absolute;
+    left: 150px;
+    top: 50px;
+}
+.btn-primary{
+    margin-left: 150px;
+}

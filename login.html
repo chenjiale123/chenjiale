@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>登入</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/admin.css">
+ 
+</head>
+<body>
+  <div class="login">
+    <form class="login-wrap"  action="./loginSave.php" id="login">
+      <img class="avatar" src="img/1.png">
+      <div id="error"></div>
+   
+      <div class="form-group">
+        <label for="email" class="sr-only">邮箱</label>
+        <input id="email" type="email" class="form-control" name="email" placeholder="邮箱" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="password" class="sr-only">密码</label>
+        <input type="password" class="form-control"  name="password"  placeholder="密码" id="pwd">
+      </div>
+      <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" value="7" name="sevenDay" type="checkbox"> 保留登录信息
+          </label>
+        </div>
+      <input type="hidden" name="send" value="1">
+      <button class="btn btn-primary btn-block" type="submit" >登 录</button>
+    </form>
+  </div>
+  <script src="js/cookie.js"> </script>
+  <script src="js/jquery-1.12.4.js"></script> <script>
+
+
+      $('form').eq(0).on('submit',function(e){
+              e.preventDefault();
+   
+             
+              $.ajax({
+                type:'POST',
+                url:$(this).attr('action'),
+                data:$(this).eq(0).serialize(),
+               success:function(data){
+                 console.log( data)
+                  var json=$.parseJSON(data)
+              if(json.valid==true){
+                alert('登入成功')
+                location.href="indexe.html"
+               }else{
+                $('#error').html('')
+                $('#error').append('<div class="alert alert-danger"><strong>'+json.message+'</strong></div>')
+                 return false;
+              }
+               }
+                
+
+              })
+
+            
+            
+                
+              
+                 
+              // })
+    	})
+
+
+
+  </script>
+</body>
+</html>

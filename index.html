@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="content">
+  
+  <div class="nav">
+      <div class="shall">
+            <img class="img1" src="img/6.png" alt=""> 
+            <div class="tiyu"> <p>体育</p></div>
+     
+           
+   
+            <img  class="img2"  src="img/4.png" alt="">
+      </div>
+      <div class="shallter">
+             <ul>
+                 <li><a href="javascript:;">直播</a></li>
+                 <li><a href="javascript:;">NBA</a></li>
+                 <li><a href="javascript:;">英超</a></li>
+                 <li><a href="javascript:;">综合</a></li>
+                 <li><a href="javascript:;">收起 <img src="img/7.png" alt=""></a></li>
+                </ul>
+                <ul class="etcp">
+                 <li><a href="javascript:;">足协</a></li>
+                 <li><a href="javascript:;">CBA</a></li>
+                 <li><a href="javascript:;">西甲</a></li>
+                 <li><a href="javascript:;">彩票</a></li>
+                 <li><a href="javascript:;">视频</a></li>
+                </ul>
+            
+
+      </div>
+      
+  </div>
+  <div class="labelter">
+      <ul >
+   <li>   <img src="img/w710h340z1l1t17f1.jpg" alt="">
+                 <span>足球宝贝很可爱</span> <small>1/10</small></li>
+   <li> <img src="img/w710h340z1l1t1b0c.jpg" alt=""><span>丁俊晖发挥出色，淘汰国外选手</span><small>2/10</small></li>
+   <li> <img src="img/w710h340z1l1t1bf1.jpg" alt=""><span>英超联赛曼联夺冠</span><small>3/10</small></li>
+   <li> <img src="img/w710h340z1l1t1c5e.jpg" alt=""><span>papi酱隆重出席开幕典礼</span><small>4/10</small></li>
+   <li> <img src="img/w710h340z1l1t1e08.jpg" alt=""><span>CBA新疆队夺冠</span><small>5/10</small></li>
+   <li> <img src="img/w710h340z1l1t178c.jpg" alt=""><span>刘国梁当选乒乓球协会主席</span><small>6/10</small></li>
+   <li> <img src="img/w710h340z1l1t1f4d.jpg" alt=""><span>国外模特性感写真</span><small>7/10</small></li>
+
+   <li> <img src="img/w710h340z1l1t1904.jpg" alt=""><span>国外模特非欧那性感写真</span><small>8/10</small></li>
+
+   <li> <img src="img/w710h340z1l1t1f3a.jpg" alt=""><span>姚明机场出现悼念老布什</span><small>9/10</small></li>
+
+   
+    </ul>
+    <div class="arrow">
+            <span class="arrow-left">&lt;</span>
+            <span class="arrow-right">&gt;</span>
+          </div>
+  </div>
+  <div class="top">
+      <img src="img/resize.jpg" alt="">
+     <div class="topin">
+         <p>三节崩盘火箭惨败27分 7人上双绿军胜尼克斯</p>
+         <img src="img/9.png" alt="">
+     </div>
+  </div>
+  <div class="top">
+        <img src="img/11.jpg" alt="">
+       <div class="topin">
+           <p>詹姆斯三节三双力克雄鹿队</p>
+           <img src="img/9.png" alt="">
+       </div>
+    </div>
+    <div class="top">
+            <img src="img/resize.jpg" alt="">
+           <div class="topin">
+               <p>三节崩盘火箭惨败27分 7人上双绿军胜尼克斯</p>
+               <img src="img/9.png" alt="">
+           </div>
+        </div>
+        <ul class="contental">
+
+        </ul>
+  <!-- <div class="contain"></div> -->
+
+
+
+    
+    <script src="js/jquery-1.12.4.js"></script>
+    <!-- <script src="ventor/bootstrct/js/bootstrap.min.js"></script> -->
+   
+    <script src=" https://cdn.bootcss.com/touchjs/0.2.14/touch.js"></script>
+    <script>
+         $(function () {
+    
+    var count = 0;
+    
+    $(".arrow-right").click(function () {
+      count++;
+      
+      
+      if(count == $(".labelter li").length){
+        count = 0;
+      }
+      console.log(count);
+      //让count渐渐的显示，其他兄弟渐渐的隐藏
+      $(".labelter li").eq(count).show().siblings("li").hide();
+    });
+    
+    $(".arrow-left").click(function () {
+      count--;
+  
+      if(count == -1){
+        count = $(".labelter li").length - 1;
+      }
+      console.log(count);
+      //让count渐渐的显示，其他兄弟渐渐的隐藏
+      $(".labelter li").eq(count).show().siblings("li").hide();
+    })
+     var count=0;
+     $(".arrow-right").click(function(){
+       count++;
+       if(count == $(".labelter li").length){
+        count = 0;
+      }
+       $(".labelter li").eq(count).show().siblings("li").hide();
+
+     })
+    
+ var timeid=setInterval(function(){
+   
+        count++;
+     $(".labelter li").eq(count%10).show().siblings("li").hide();
+
+ },2000)
+
+  var lock=true
+$('.shallter li').eq(4).click(function(){
+    // $('.shallter ul li ').eq(4).html('<a href="javasrcipt:;"> 更多</a>   <img src="img/12.png">')
+  if(lock){
+    $(this).html('<a href="javasrcipt:;"> 更多</a>   <img src="img/12.png">')
+    lock=false
+    $('.etcp').hide()
+    $('.shallter').css('height','50%')
+  }else{
+    $(this).html('<a href="javasrcipt:;"> 收起 </a>   <img src="img/7.png">')
+    lock=true
+    $('.etcp').show()
+  }
+
+
+})
+
+$('.top').click(function(){
+    window.location.href = "detail.html";
+})
+
+// $(".labelter li").swipeRight(function(){
+//         $(this).eq(count).hide().siblings("li").show()
+
+//     })
+
+
+function stringToobject(data){
+    var jsonData
+	if (typeof data === 'string') {
+		jsonData = $.parseJSON(data);
+	} else if (typeof data === 'object') {
+		jsonData = data
+	}
+	return jsonData
+       }
+
+    $.get('getNews.php',function(data){
+        var jsonData = stringToobject(data);
+        console.log(jsonData)
+       $.each(jsonData.message,function(index,el){
+       ul=`
+       <li> 
+        <img src="${el.img}">
+       <h2>${el.title}</h2>
+       <p>${el.info}</p>
+     
+       </li>
+       `
+    console.log(el.message)
+       $('.contental').append(ul)
+       })
+       
+    })
+         
+         
+    // $.ajax({
+    //   type:'GET',
+    //   url:'getNews.php',
+    //   data:'newsId='+GetHttpString('id'),
+    //   success:function(data){
+    //    console.log(data)
+    //   }
+    // })
+  
+
+
+
+
+
+
+
+   
+
+
+
+    
+  });
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+
+@media  screen and (min-width:300px ) and (max-width:800px) {
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .content{
+        width: 100%;
+        margin: 0 auto;
+        height: 1500px;
+    }
+    
+    .nav{
+        width: 100%;
+        /* height: 150px; */
+        background: rgb(71, 132, 245);
+        padding-top: 10px;
+        box-sizing: border-box;
+        
+    
+    }
+    .shall{
+        width: 100%;
+        height: 58px;
+        border-bottom: 1px solid rgb(94, 180, 250);
+     
+      
+    }
+    
+    .shall .img1 {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-left: 10px;
+        
+    }
+    .shall .img2{
+        width: 40px;
+        height: 40px;
+        float: right;
+        margin-right: 10px;
+    }
+    .tiyu{
+        width: 65px;
+        height: 40px;
+        background: rgb(71, 132, 245);
+        border-left: 1px solid rgb(94, 180, 250);
+        float: left;
+        margin-left: 15px;
+        padding-top: 5px;
+    
+        
+    }
+    .tiyu p{
+        color: #fff;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+    
+    
+    .shallter{
+        width: 100%;
+        height: 92px;
+        padding-top: 10px;
+    }
+    .shallter ul{
+        width: 90%;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .shallter ul li{
+       float: left;
+       width: 20%;
+       height: 100%;
+    }
+    .shallter ul li img{
+        width: 15px;
+        height: 15px;
+        float: right;
+        margin-right: 2%;
+    }
+    .shallter ul li a{
+        font-size: 15px;
+        color: #fff;
+       margin-left: 25%;
+    }
+    .labelter ul{
+        /* margin: 0 auto; */
+        width:96%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        margin: 10px auto;
+    }
+    .labelter li{
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+    .labelter li:first-child{
+        display: block;
+    }
+    .labelter li span{
+        color: #000;
+        font-size: 20px;
+        position: absolute;
+    }
+    .labelter li small{
+        color: #000;
+        font-size: 20px;
+        position: absolute;
+        right: 0;
+    }
+    .labelter img{
+       width: 100%;
+       height: 100%;
+    }
+    .arrow {
+        display: none;
+        position: relative;
+      }
+      
+      .labelter:hover .arrow {
+        display: block;
+      }
+      
+      .arrow-left
+      {
+        font-family: "SimSun", "宋体";
+        width: 30px;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        margin-top: -150px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 60px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+      }
+      .arrow-right{
+        font-family: "SimSun", "宋体";
+        width: 30px;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        cursor: pointer;
+        text-align: center;
+        line-height: 60px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+        margin-top: -150px;
+      }
+    
+      
+      .arrow-left:hover,
+      .arrow-right:hover {
+        background-color: rgba(0, 0, 0, .5);
+      }
+      
+      .arrow-left {
+        left: 0;
+      }
+      
+      .arrow-right {
+        right: 0;
+      }
+    
+    
+    
+    
+    
+    
+    
+    
+    .top{
+        width: 95%;
+        height: 110px;
+        box-shadow: 0px 1px #eee;
+        margin: 0 auto;
+    
+    }
+    .top>img{
+      width:20%;
+      height: 95px;
+      padding-top: 15px;
+      box-sizing: border-box;
+      /* margin-left: 15px; */
+    
+    }
+    .topin{
+        width: 74%;
+        height: 80px;
+        float: right;
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+    .topin img{
+        margin-top: 0;
+    width: 20px;
+    height: 20px;
+    }
+    .topin p{
+        font-size: 20px;
+    
+    }
+    .contental{
+        width: 100%;
+      height:auto ;
+    }
+    .contental li{
+        width: 100%;
+        height: 140px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+    }
+    .contental li img{
+        width: 20%;
+        height: 80px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .contental li h2{
+        font-size: 25px;
+        position: absolute;
+        left: 30%;
+        top: 20px;
+    }
+    .contental li p{
+        font-size: 16px;
+        position: absolute;
+        left: 30%;
+        top: 70px;
+    }
+}  
+
+
+
+    @media screen and (min-width:1200px){
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .content{
+            width: 60%;
+            margin: 0 auto;
+            height: 1500px;
+        }
+        
+        .nav{
+            width: 100%;
+            /* height: 150px; */
+            background: rgb(71, 132, 245);
+            padding-top: 10px;
+            box-sizing: border-box;
+            
+        
+        }
+        .shall{
+            width: 100%;
+            height: 58px;
+            border-bottom: 1px solid rgb(94, 180, 250);
+         
+          
+        }
+        
+        .shall .img1 {
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin-left: 10px;
+            
+        }
+        .shall .img2{
+            width: 40px;
+            height: 40px;
+            float: right;
+            margin-right: 10px;
+        }
+        .tiyu{
+            width: 65px;
+            height: 40px;
+            background: rgb(71, 132, 245);
+            border-left: 1px solid rgb(94, 180, 250);
+            float: left;
+            margin-left: 15px;
+            padding-top: 5px;
+        
+            
+        }
+        .tiyu p{
+            color: #fff;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        
+        
+        .shallter{
+            width: 100%;
+            height: 92px;
+            padding-top: 6px;
+        }
+        .shallter ul{
+            width: 90%;
+            height: 40px;
+            margin: 0 auto;
+        }
+        .shallter ul li{
+           float: left;
+           width: 20%;
+           height: 100%;
+        }
+        .shallter ul li img{
+            width: 15px;
+            height: 15px;
+            float: right;
+            margin-right: 2%;
+        }
+        .shallter ul li a{
+            font-size: 15px;
+            color: #fff;
+           margin-left: 25%;
+        }
+        .labelter ul{
+            /* margin: 0 auto; */
+            width:96%;
+            height: 228px;
+            overflow: hidden;
+            position: relative;
+            margin: 10px auto;
+        }
+        .labelter li{
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .labelter li:first-child{
+            display: block;
+        }
+        .labelter li span{
+            color: #000;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: 200px;
+        }
+        .labelter li small{
+            color: #000;
+            font-size: 20px;
+            position: absolute;
+            right: 0;
+            top: 200px;
+        }
+        .labelter img{
+           width: 100%;
+           height: 100%;
+        }
+        .arrow {
+            display: none;
+            position: relative;
+          }
+          
+          .labelter:hover .arrow {
+            display: block;
+          }
+          
+          .arrow-left
+          {
+            font-family: "SimSun", "宋体";
+            width: 30px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            margin-top: -150px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 30px;
+          }
+          .arrow-right{
+            font-family: "SimSun", "宋体";
+            width: 30px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            cursor: pointer;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 30px;
+            margin-top: -150px;
+          }
+        
+          
+          .arrow-left:hover,
+          .arrow-right:hover {
+            background-color: rgba(0, 0, 0, .5);
+          }
+          
+          .arrow-left {
+            left: 0;
+          }
+          
+          .arrow-right {
+            right: 0;
+          }
+        
+        
+        
+        
+        
+        
+        
+        
+        .top{
+            width: 95%;
+            height: 110px;
+            box-shadow: 0px 1px #eee;
+            margin: 0 auto;
+        
+        }
+        .top>img{
+          width:20%;
+          height: 95px;
+          padding-top: 15px;
+          box-sizing: border-box;
+          /* margin-left: 15px; */
+        
+        }
+        .topin{
+            width: 74%;
+            height: 80px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 15px;
+        }
+        .topin img{
+            margin-top: 4%;
+        width: 20px;
+        height: 20px;
+        }
+        .topin p{
+            font-size: 20px;
+        
+        }
+        .contental{
+            width: 100%;
+          height:auto ;
+        }
+        .contental li{
+            width: 100%;
+            height: 140px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+        .contental li img{
+            width: 20%;
+            height: 95px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .contental li h2{
+            font-size: 25px;
+            position: absolute;
+            left: 30%;
+            top: 20px;
+        }
+        .contental li p{
+            font-size: 16px;
+            position: absolute;
+            left: 30%;
+            top: 70px;
+        }
+    }

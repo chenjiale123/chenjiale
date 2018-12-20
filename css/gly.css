@@ -1,0 +1,40 @@
+table{
+    width: 75%;
+    height: 80%;
+    background: rgb(248, 248, 248);
+    float: right;
+    margin-right: 70px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+table td{
+    border: 1px solid rgb(239, 246, 255);
+    height: 20px;
+    text-align: center;
+
+    
+}
+table td button{
+    width: 50px;
+    height: 30px;
+    background: rgb(52, 252, 102);
+    border: 1px solid rgb(52, 252, 52);
+}
+table td .red{
+    width: 50px;
+    height: 30px;
+    background: rgb(252, 115, 52);
+    border: 1px solid rgb(252, 149, 52);
+    margin-left: 5px;
+}
+table td button span{
+    color: #fff;
+}
+table .etc{
+    background: rgb(88, 102, 119);
+    color: rgb(253, 253, 253);
+    height: 20px;
+}
+table .etp{
+    width: 40px;
+}
